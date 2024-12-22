@@ -1,4 +1,6 @@
+// @ts-ignore
 async function funcTitle({ width, height, fabric }) {
+  // @ts-ignore
   async function onRender(progress, canvas) {
     function drawTextWithBackground(options) {
       const {
@@ -66,13 +68,17 @@ async function funcTitle({ width, height, fabric }) {
     const textGroup = drawTextWithBackground({
       text: `[[title]]`,
       fontFamily: "[[fontFamily]]",
-      fontSize: "[[fontSize]]",
+      // @ts-ignore
+      fontSize: [[fontSize]],
       textColor: "[[textColor]]",
       backgroundColor: "[[backgroundColor]]",
-      top: "[[top]]",
-      cornerRadius: "[[cornerRadius]]",
-      padding: "[[padding]]",
-      angle: "[[angle]]",
+      top: [[top]],
+      // @ts-ignore
+      cornerRadius: [[cornerRadius]],
+      // @ts-ignore
+      padding: [[padding]],
+      // @ts-ignore
+      angle: [[angle]],
     });
 
     canvas.add(textGroup);
