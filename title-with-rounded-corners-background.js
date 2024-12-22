@@ -66,13 +66,13 @@ async function funcTitle({ width, height, fabric }) {
     const textGroup = drawTextWithBackground({
       text: `[[title]]`,
       fontFamily: "[[fontFamily]]",
-      fontSize: 20,
-      textColor: "white",
-      backgroundColor: "black",
-      top: 10,
-      cornerRadius: 10,
-      padding: 10,
-      angle: -2,
+      fontSize: "[[fontSize]]",
+      textColor: "[[textColor]]",
+      backgroundColor: "[[backgroundColor]]",
+      top: "[[top]]",
+      cornerRadius: "[[cornerRadius]]",
+      padding: "[[padding]]",
+      angle: "[[angle]]",
     });
 
     canvas.add(textGroup);
