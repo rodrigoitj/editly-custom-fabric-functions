@@ -1,8 +1,5 @@
 async function funcTitle({ width, height, fabric }) {
   async function onRender(progress, canvas) {
-    fabric.nodeCanvas.registerFont("[[fontUrl]]", {
-      family: "[[fontFamily]]",
-    });
     function drawTextWithBackground(options) {
       const {
         text,
