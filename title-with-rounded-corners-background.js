@@ -68,7 +68,7 @@ async function funcTitle({ width, height, fabric }) {
 
     const textGroup = drawTextWithBackground({
       text: `[[title]]`,
-      fontFamily: "Patua_One",
+      fontFamily: "[[fontFamily]]",
       fontSize: 20,
       textColor: "white",
       backgroundColor: "black",
