@@ -1,4 +1,5 @@
 async function func({ width, height, duration, params, fabric }) {
+  console.log(arguments);
   const {
     text,
     textColor = "#ffffff",
