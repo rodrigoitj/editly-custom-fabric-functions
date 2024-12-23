@@ -138,6 +138,7 @@ async function func({ width, height, duration, params, fabric }) {
   }
 
   async function onRender(progress, canvas) {
+    console.log({ progress, opacity, speed, duration });
     const linear = calculateGoalValue(progress, opacity, speed, duration);
     const textBox = drawTextWithBackground({
       text,
