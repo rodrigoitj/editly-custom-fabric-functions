@@ -141,8 +141,13 @@ async function func(options) {
 
   async function onRender(progress, canvas) {
     // console.log(options);
-    const linear = calculateGoalValue(progress, opacity, speed, layerDuration);
-    console.log({ progress, opacity, speed, layerDuration, linear });
+    const linear = calculateGoalValue(
+      progress * 100,
+      opacity,
+      speed,
+      layerDuration
+    );
+    // console.log({ progress, opacity, speed, layerDuration, linear });
     const textBox = drawTextWithBackground({
       text,
       fontFamily,
