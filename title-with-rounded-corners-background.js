@@ -1,7 +1,14 @@
-async function funcTitle({ width, height, fabric }) {
-  // const font = new fabric.FontFace("[[fontFamily]]", "url([[fontUrl]])");
-  // const loadedFont = await font.load();
-  // document.fonts.add(loadedFont);
+async function func({ width, height, params, fabric }) {
+  const {
+    text,
+    textColor = "#ffffff",
+    backgroundColor = "#000000",
+    fontFamily = "sans-serif",
+    fontSize = 0.05,
+    padding = 5,
+    angle = -2,
+    cornerRadius = 10,
+  } = params;
   async function onRender(progress, canvas) {
     const min = Math.min(width, height);
     function drawTextWithBackground(options) {
@@ -69,15 +76,15 @@ async function funcTitle({ width, height, fabric }) {
     }
 
     const textGroup = drawTextWithBackground({
-      text: `[[title]]`,
-      fontFamily: "[[fontFamily]]",
-      fontSize: [[fontSize]],
-      textColor: "[[textColor]]",
-      backgroundColor: "[[backgroundColor]]",
-      top: [[top]],
-      cornerRadius: [[cornerRadius]],
-      padding: [[padding]],
-      angle: [[angle]],
+      text,
+      fontFamily,
+      fontSize,
+      textColor,
+      backgroundColor,
+      top,
+      cornerRadius,
+      padding,
+      angle,
     });
 
     canvas.add(textGroup);

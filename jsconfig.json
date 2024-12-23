@@ -5,8 +5,8 @@
     "checkJs": true,
     "noEmit": true,
     "allowJs": true,
-    "skipLibCheck": true,
-    "noCheck": true
+    "skipLibCheck": true
+    // "noCheck": true
   },
   "exclude": ["node_modules"]
 }
