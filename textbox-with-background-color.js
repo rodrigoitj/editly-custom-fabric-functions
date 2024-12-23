@@ -1,5 +1,5 @@
 async function func(options) {
-  const { width, height, duration, params, fabric } = options;
+  const { width, height, params, fabric } = options;
   const {
     text,
     textColor = "#ffffff",
@@ -17,6 +17,7 @@ async function func(options) {
     opacity = 1,
     // delay = 0,
     speed = 1,
+    layerDuration,
   } = params;
 
   const min = Math.min(width, height);
@@ -139,8 +140,8 @@ async function func(options) {
   }
 
   async function onRender(progress, canvas) {
-    console.log(options);
-    const linear = calculateGoalValue(progress, opacity, speed, duration);
+    // console.log(options);
+    const linear = calculateGoalValue(progress, opacity, speed, layerDuration);
     const textBox = drawTextWithBackground({
       text,
       fontFamily,
