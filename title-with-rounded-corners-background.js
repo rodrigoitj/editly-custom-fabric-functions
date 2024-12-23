@@ -1,7 +1,9 @@
-// @ts-ignore
 async function funcTitle({ width, height, fabric }) {
-  // @ts-ignore
+  // const font = new fabric.FontFace("[[fontFamily]]", "url([[fontUrl]])");
+  // const loadedFont = await font.load();
+  // document.fonts.add(loadedFont);
   async function onRender(progress, canvas) {
+    const min = Math.min(width, height);
     function drawTextWithBackground(options) {
       const {
         text,
@@ -16,11 +18,12 @@ async function funcTitle({ width, height, fabric }) {
         lineHeight = 1,
         textWidth = canvas.width * 0.9,
       } = options;
+      const fontSizeAbs = Math.round(min * fontSize);
 
       // Create the text object
       const textObj = new fabric.Textbox(text, {
         fontFamily,
-        fontSize,
+        fontSize: fontSizeAbs,
         fill: textColor,
         // backgroundColor: 'blue',
         lineHeight,
@@ -68,21 +71,16 @@ async function funcTitle({ width, height, fabric }) {
     const textGroup = drawTextWithBackground({
       text: `[[title]]`,
       fontFamily: "[[fontFamily]]",
-      // @ts-ignore
       fontSize: [[fontSize]],
       textColor: "[[textColor]]",
       backgroundColor: "[[backgroundColor]]",
       top: [[top]],
-      // @ts-ignore
       cornerRadius: [[cornerRadius]],
-      // @ts-ignore
       padding: [[padding]],
-      // @ts-ignore
       angle: [[angle]],
     });
 
     canvas.add(textGroup);
-    // canvas.backgroundColor = 'hsl(33%, 100%, 50%)';
   }
 
   function onClose() {
