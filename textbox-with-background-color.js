@@ -15,6 +15,7 @@ async function func(options) {
     },
     angle = -2,
     opacity = 1,
+    fadeIn = false,
     // delay = 0,
     speed = 1,
     layerDuration,
@@ -141,12 +142,9 @@ async function func(options) {
 
   async function onRender(progress, canvas) {
     // console.log(options);
-    const linear = calculateGoalValue(
-      progress * 100,
-      opacity,
-      speed,
-      layerDuration
-    );
+    const linear = fadeIn
+      ? calculateGoalValue(progress * 100, opacity, speed, layerDuration)
+      : 1;
     // console.log({ progress, opacity, speed, layerDuration, linear });
     const textBox = drawTextWithBackground({
       text,
@@ -157,6 +155,7 @@ async function func(options) {
       padding,
       angle,
       opacity: linear,
+      fadeIn,
     });
     canvas.add(textBox);
   }
