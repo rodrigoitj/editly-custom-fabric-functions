@@ -47,7 +47,7 @@ async function func(options) {
     let left = width / 2;
     if (position === "top") {
       originY = "top";
-      top = height * margin.x;
+      top = height * margin.y;
     } else if (position === "bottom") {
       originY = "bottom";
       top = height * (1 - margin.y);
